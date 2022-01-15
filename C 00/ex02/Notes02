@@ -1,0 +1,12 @@
+#include <unistd.h>
+
+void  ft_print_reverse_alphabet(void)
+{
+  char  letter;             /* --------> Definir a variavel como 'z'. Enquanto esta for maior que 'a' escreve a variavel e subtrai um valor ate chegar a 'a' */
+  letter = 'z';
+  while (letter >= 'a')
+  {
+    write(1, &letter, 1);
+    letter--;
+  }
+}
