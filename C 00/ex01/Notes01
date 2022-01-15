@@ -1,0 +1,18 @@
+#include <unistd.h>
+
+void    ft_print_alphabet(void)
+{
+    char letter;                      /* Definimos "letter" como variavel e com o valor 'a' */
+    letter = 'a';
+    while(letter <= 'z')              /* Enquanto "letter" tiver um valor menor ou igual que 'z' vai correr a funcao 'write' em que escreve a variavel
+                                      e depois adiciona 1 valor ate chegar a 'z' */
+    {                                 
+        write(1, &letter, 1);
+        letter++;
+    }
+}
+int main()
+{
+    ft_print_alphabet();
+    return (0);
+}
