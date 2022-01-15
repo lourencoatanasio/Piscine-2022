@@ -1,0 +1,12 @@
+#include <unistd.h>
+
+void  ft_putchar(char c)      
+{
+write(1, &c, 1);          /* -------> A funcao ft_putchar contem uma variavel (&c) que vai ser definida depois no main e escrita pela funcao write */
+}
+
+int main()
+{
+  ft_putchar('c');        /* -------> Para o comando funcionar preciso de inserir um caracter para preencher a variavel */            
+  return (0);
+}
