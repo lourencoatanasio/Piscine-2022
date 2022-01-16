@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldiogo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 18:19:42 by ldiogo            #+#    #+#             */
-/*   Updated: 2022/01/14 11:23:18 by ldiogo           ###   ########.fr       */
+/*   Created: 2022/01/16 13:21:38 by ldiogo            #+#    #+#             */
+/*   Updated: 2022/01/16 16:12:04 by ldiogo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_is_negative(int n)
+void	rush(int x, int y);
 
+int	main(void)
 {
-	char	result;
-
-	if (n >= 0)
-	{
-		result = 'P';
-		write(1, &result, 1);
-	}
-	else
-	{
-		result = 'N';
-		write(1, &result, 1);
-	}
+	rush(3, 100);
+	return (0);
 }

@@ -2,6 +2,8 @@
 
 int main ()
 {
-	printf("hello world\n");
-	printf("a tua mae\n");
+	char	c;
+
+	c = 'k';
+	printf("%lu %d %c\n", sizeof(c), c, c);
 }

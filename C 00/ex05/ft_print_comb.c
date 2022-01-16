@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_print_comb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldiogo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 18:19:42 by ldiogo            #+#    #+#             */
-/*   Updated: 2022/01/14 11:23:18 by ldiogo           ###   ########.fr       */
+/*   Created: 2022/01/14 11:20:11 by ldiogo            #+#    #+#             */
+/*   Updated: 2022/01/14 12:12:17 by ldiogo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_is_negative(int n)
-
+void	ft_print_comb(void)
 {
-	char	result;
+	int		x;
+	int		y;
+	int		z;
 
-	if (n >= 0)
+	x = '0';
+	while (x <= '7')
 	{
-		result = 'P';
-		write(1, &result, 1);
-	}
-	else
-	{
-		result = 'N';
-		write(1, &result, 1);
+		y = x + 1;
+		while (y <= '8')
+		{
+			z = y + 1;
+			while (z <= '9')
+			{
+				write(1, &x, 1);
+				write(1, &y, 1);
+				write(1, &z, 1);
+				if (x != '7')
+					write(1, " , ", 1);
+				z++;
+			}
+			y++;
+		}
+		x++;
 	}
 }
