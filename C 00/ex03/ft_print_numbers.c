@@ -6,7 +6,7 @@
 /*   By: ldiogo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 18:03:18 by ldiogo            #+#    #+#             */
-/*   Updated: 2022/01/14 12:08:04 by ldiogo           ###   ########.fr       */
+/*   Updated: 2022/01/19 10:13:33 by ldiogo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_print_numbers(void)
 {
 	char	number;
 
-	number = '0' ;
+	number = '0';
 	while (number <= '9')
 	{
 		write(1, &number, 1);

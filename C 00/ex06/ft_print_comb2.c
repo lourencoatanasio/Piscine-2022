@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   fi_print_comb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldiogo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 18:19:42 by ldiogo            #+#    #+#             */
-/*   Updated: 2022/01/19 10:14:21 by ldiogo           ###   ########.fr       */
+/*   Created: 2022/01/14 14:04:07 by ldiogo            #+#    #+#             */
+/*   Updated: 2022/01/19 10:16:16 by ldiogo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_is_negative(int n)
-
+void	ft_putchar(char c)
 {
-	char	result;
+	write(1, &c, 1);
+}
 
-	if (n >= 0)
+void	ft_print_comb2(void)
+{
+	int	y;
+	int	x;
+
+	x = -1;
+	while (x++ <= 99)
 	{
-		result = 'P';
-		write(1, &result, 1);
-	}
-	else
-	{
-		result = 'N';
-		write(1, &result, 1);
+		y = x;
+		while (y++ < 99)
+		{
+			ft_putchar(x / 10 + 48);
+			ft_putchar(x % 10 + 48);
+			ft_putchar(' ');
+			ft_putchar(y / 10 + 48);
+			ft_putchar(y % 10 + 48);
+			if (!(x == 98 && y == 99))
+				ft_putchar(',');
+			ft_putchar(' ');
+		}
 	}
 }
