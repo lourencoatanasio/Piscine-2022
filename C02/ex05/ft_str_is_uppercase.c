@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldiogo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 20:37:06 by ldiogo            #+#    #+#             */
-/*   Updated: 2022/01/20 16:44:23 by ldiogo           ###   ########.fr       */
+/*   Created: 2022/01/23 12:10:03 by ldiogo            #+#    #+#             */
+/*   Updated: 2022/01/23 13:20:10 by ldiogo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
+int	ft_str_is_uppercase(char *str)
 {
-	int	div;
-	int	mod;
+	int	i;
 
-	div = (*a / *b);
-	mod = (*a % *b);
-	*a = div;
-	*b = mod;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == ' ')
+			i++;
+		if ((str[i] <= 90) && (str[i] >= 65))
+			i++;
+		else
+			return (0);
+	}
+	return (1);
 }
+/*#include <stdio.h>
+int	main()
+{
+	int a;
+	char *str;
+	str = "OL2";
+
+	ft_str_is_uppercase(str);
+	printf("a = %d", ft_str_is_uppercase(str));
+}*/

@@ -1,22 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldiogo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 20:37:06 by ldiogo            #+#    #+#             */
-/*   Updated: 2022/01/20 16:44:23 by ldiogo           ###   ########.fr       */
+/*   Created: 2022/01/21 12:53:52 by ldiogo            #+#    #+#             */
+/*   Updated: 2022/01/23 11:59:24 by ldiogo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
-void	ft_ultimate_div_mod(int *a, int *b)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	div;
-	int	mod;
+	unsigned int	i;
 
-	div = (*a / *b);
-	mod = (*a % *b);
-	*a = div;
-	*b = mod;
+	i = 0;
+	while (src[i] != '\0' && i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }
+
+/*int main()
+{
+	char *dest;
+	char *src = "ola amigo";
+	unsigned int n; 
+	n = 2;
+	ft_strncpy(dest, src, n);
+}*/

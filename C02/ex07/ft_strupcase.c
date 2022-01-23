@@ -1,22 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldiogo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 20:37:06 by ldiogo            #+#    #+#             */
-/*   Updated: 2022/01/20 16:44:23 by ldiogo           ###   ########.fr       */
+/*   Created: 2022/01/23 14:15:53 by ldiogo            #+#    #+#             */
+/*   Updated: 2022/01/23 14:56:36 by ldiogo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
+char	*ft_strupcase(char *str)
 {
-	int	div;
-	int	mod;
+	int	i;
 
-	div = (*a / *b);
-	mod = (*a % *b);
-	*a = div;
-	*b = mod;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+		{
+			str[i] = str[i] - 32;
+			i++;
+		}
+		else
+		{
+			i++;
+		}
+	}
+	return (str);
 }
+
+/*#include <stdio.h>
+int main()
+{
+	char str[] = "hfgvh";
+
+	ft_strupcase(str);
+	printf("%s", str);
+	return(0);
+}*/

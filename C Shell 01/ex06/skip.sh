@@ -1,1 +1,1 @@
-ls -l | awk 'length($0) > 10' |sed -n 'p;n'
+ls -l |sed -n 'p;n'

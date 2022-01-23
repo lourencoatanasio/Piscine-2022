@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_is_lowercase.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldiogo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 20:37:06 by ldiogo            #+#    #+#             */
-/*   Updated: 2022/01/20 16:44:23 by ldiogo           ###   ########.fr       */
+/*   Created: 2022/01/22 19:51:03 by ldiogo            #+#    #+#             */
+/*   Updated: 2022/01/23 13:20:23 by ldiogo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
+int	ft_str_is_lowercase(char *str)
 {
-	int	div;
-	int	mod;
+	int	i;
 
-	div = (*a / *b);
-	mod = (*a % *b);
-	*a = div;
-	*b = mod;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == ' ')
+			i++;
+		if ((str[i] <= 122) && (str[i] >= 97))
+			i++;
+		else
+			return (0);
+	}
+	return (1);
 }

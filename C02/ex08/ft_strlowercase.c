@@ -1,22 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_strlowercase.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldiogo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 20:37:06 by ldiogo            #+#    #+#             */
-/*   Updated: 2022/01/20 16:44:23 by ldiogo           ###   ########.fr       */
+/*   Created: 2022/01/23 14:56:07 by ldiogo            #+#    #+#             */
+/*   Updated: 2022/01/23 15:00:44 by ldiogo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
+char	*ft_strlowercase(char *str)
 {
-	int	div;
-	int	mod;
+	int	i;
 
-	div = (*a / *b);
-	mod = (*a % *b);
-	*a = div;
-	*b = mod;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'A' && str[i] <= 'Z')
+		{
+			str[i] = str[i] + 32;
+			i++;
+		}
+		else
+		{
+			i++;
+		}
+	}
+	return (str);
 }
+
+/*#include <stdio.h>
+int main()
+{
+	char str[] = "AHAHAHA";
+
+	ft_strlowercase(str);
+	printf("%s", str);
+	return(0);
+}*/

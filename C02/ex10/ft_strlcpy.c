@@ -1,45 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldiogo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/17 17:15:03 by ldiogo            #+#    #+#             */
-/*   Updated: 2022/01/19 17:57:02 by ldiogo           ###   ########.fr       */
+/*   Created: 2022/01/23 16:31:49 by ldiogo            #+#    #+#             */
+/*   Updated: 2022/01/23 18:27:07 by ldiogo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+char	*ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	write(1, &c, 1);
+	unsigned int	i;
+	unsigned int	counter;
+
+	i = 0;
+	counter = 0;
+	while (src[counter] != '\0')
+		counter++;
+	if (size != 0)
+	{	
+		while (src[i] != '\0' && i < (size - 1))
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
+	}
+	return (counter);
 }
 
-void	ft_putnbr(int nb)
+/*int main()
 {
-	if (nb <= 2147483647 && nb >= -2147483648)
-	{
-		if (nb == -2147483648)
-		{
-			ft_putchar('-');
-			ft_putchar('2');
-			ft_putnbr(147483648);
-		}
-		else if (nb < 0)
-		{
-			ft_putchar('-');
-			ft_putnbr(-nb);
-		}
-		else if (nb > 9)
-		{
-			ft_putnbr(nb / 10);
-			ft_putnbr(nb % 10);
-		}
-		else if (nb < 9)
-		{
-			ft_putchar(nb + '0');
-		}
-	}
-}
+	char *dest;
+	char *src = "ola amigo";
+	unsigned int size;
+	n = 2;
+	ft_strlcpy(dest, src, n);
+}*/

@@ -1,22 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldiogo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 20:37:06 by ldiogo            #+#    #+#             */
-/*   Updated: 2022/01/20 16:44:23 by ldiogo           ###   ########.fr       */
+/*   Created: 2022/01/23 13:07:20 by ldiogo            #+#    #+#             */
+/*   Updated: 2022/01/23 14:14:50 by ldiogo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
+int	ft_str_is_printable(char *str)
 {
-	int	div;
-	int	mod;
+	int	i;
 
-	div = (*a / *b);
-	mod = (*a % *b);
-	*a = div;
-	*b = mod;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if ((str[i] >= 32 && str[i] <= 127))
+		{
+			i++;
+		}
+		else
+		{
+			return (0);
+		}
+	}
+	return (1);
 }
+/*(#include <stdio.h>
+int main()
+{
+	char *str;
+	str = "a199";
+
+	ft_str_is_printable(str);
+	printf("a = %d", ft_str_is_numeric(str));
+
+}*/
