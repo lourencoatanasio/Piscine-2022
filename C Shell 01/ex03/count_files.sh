@@ -1,1 +1,1 @@
-find . \( -type f -o -type d \) |wc -l |bc
+find . \( -type f -o -type d \) |wc -l |bs
